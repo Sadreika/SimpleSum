@@ -11,17 +11,19 @@ namespace SimpleSum
         static void Main(string[] args)
         {
             Program programObject = new Program();
-            string firstValue = "155555559798989";
-            string secondValue = "2515456456465456456465";
+            string firstValue = "999999999999";
+            string secondValue = "999999999999";
 
             List<int> firstValueList = programObject.creatingList(firstValue);
             List<int> secondValueList = programObject.creatingList(secondValue);
 
             List<int> answer = programObject.searchingForSum(firstValueList, secondValueList);
-            for(int i = 0; i < answer.Count; i++)
+            //if()
+            for(int i = answer.Count - 1; i >= 0; i--)
             {
-                Console.WriteLine(answer[i]);
+                Console.Write(answer[i]);
             }
+            Console.WriteLine();
         }
 
         public List<int> creatingList(string value)
@@ -33,43 +35,83 @@ namespace SimpleSum
             }
             return valueList;
         }
-
         public List<int> searchingForSum(List<int> firstList, List<int> secondList)
         {
             int haveToAdd = 0;
-            
             List<int> sum = new List<int>();
             if(firstList.Count >= secondList.Count)
             {
-                for(int i = firstList.Count - 1; i >= 0; i--)
+                for(int i = 0; i < firstList.Count; i++)
                 {
-                    
-                    int suma = (firstList[i] + secondList[i] + haveToAdd);
-                    if(suma > 9)
+                    try
                     {
-                        sum.Add(suma % 10);
-                        haveToAdd = suma / 10;
-                    }
-                    else
+                        int suma = (firstList[i] + secondList[i] + haveToAdd);
+                        haveToAdd = 0;
+                        if (suma > 9)
+                        {
+                            sum.Add(suma % 10);
+                            haveToAdd = suma / 10;
+                        }
+                        else
+                        {
+                            sum.Add(suma);
+                        }
+                    } catch(Exception)
                     {
-                        sum.Add(suma);
+                        int suma = (firstList[i] + haveToAdd);
+                        haveToAdd = 0;
+                        if (suma > 9)
+                        {
+                            sum.Add(suma % 10);
+                            haveToAdd = suma / 10;
+                        }
+                        else
+                        {
+                            sum.Add(suma);
+                        }
                     }
+                }
+                if(haveToAdd != 0)
+                {
+                    sum.Add(haveToAdd);
                 }
             }
             else
             {
-                for (int i = secondList.Count - 1; i >= 0; i--)
+                for (int i = 0; i < secondList.Count; i++)
                 {
-                    int suma = (firstList[i] + secondList[i] + haveToAdd);
-                    if (suma > 9)
+                    try
                     {
-                        sum.Add(suma % 10);
-                        haveToAdd = suma / 10;
+                        int suma = (firstList[i] + secondList[i] + haveToAdd);
+                        haveToAdd = 0;
+                        if (suma > 9)
+                        {
+                            sum.Add(suma % 10);
+                            haveToAdd = suma / 10;
+                        }
+                        else
+                        {
+                            sum.Add(suma);
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
-                        sum.Add(suma);
+                        int suma = (secondList[i] + haveToAdd);
+                        haveToAdd = 0;
+                        if (suma > 9)
+                        {
+                            sum.Add(suma % 10);
+                            haveToAdd = suma / 10;
+                        }
+                        else
+                        {
+                            sum.Add(suma);
+                        }
                     }
+                }
+                if (haveToAdd != 0)
+                {
+                    sum.Add(haveToAdd);
                 }
             }
 
