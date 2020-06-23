@@ -1,0 +1,7 @@
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\bin\Debug\SimpleSum.exe.config
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\bin\Debug\SimpleSum.exe
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\bin\Debug\SimpleSum.pdb
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\obj\Debug\SimpleSum.csprojAssemblyReference.cache
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\obj\Debug\SimpleSum.csproj.CoreCompileInputs.cache
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\obj\Debug\SimpleSum.exe
+C:\Users\mariu\Documents\GitHub\SimpleSum\SimpleSum\SimpleSum\obj\Debug\SimpleSum.pdb
