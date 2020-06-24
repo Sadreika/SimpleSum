@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SimpleSum
@@ -10,20 +12,43 @@ namespace SimpleSum
     {
         static void Main(string[] args)
         {
-            Program programObject = new Program();
+            /*Program programObject = new Program();
             string firstValue = "999999999999";
             string secondValue = "999999999999";
 
             List<int> firstValueList = programObject.creatingList(firstValue);
             List<int> secondValueList = programObject.creatingList(secondValue);
 
-            List<int> answer = programObject.searchingForSum(firstValueList, secondValueList);
-            //if()
-            for(int i = answer.Count - 1; i >= 0; i--)
+            List<int> answer = programObject.searchingForSum(firstValueList, secondValueList);*/
+            //Program programObject = new Program();
+            //programObject.start("999999999999", "999999999999");
+            
+            /*for(int i = answer.Count - 1; i >= 0; i--)
             {
                 Console.Write(answer[i]);
             }
-            Console.WriteLine();
+            Console.WriteLine();*/
+        }
+
+        public List<int> start(string firstValue, string secondValue) 
+        {
+            Program programObject = new Program();
+
+            List<int> firstValueList = programObject.creatingList(firstValue);
+            List<int> secondValueList = programObject.creatingList(secondValue);
+
+            List<int> answer = programObject.searchingForSum(firstValueList, secondValueList);
+
+            return answer;
+        }
+
+        public List<int> startList(List<int> firstValueList, List<int> secondValueList)
+        {
+            Program programObject = new Program();
+
+            List<int> answer = programObject.searchingForSum(firstValueList, secondValueList);
+
+            return answer;
         }
 
         public List<int> creatingList(string value)
